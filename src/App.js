@@ -1,23 +1,36 @@
 import React from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Features from './components/Features';
-import Testimonials from './components/Testimonials';
-import Pricing from './components/Pricing';
-import FAQ from './components/FAQ';
-import Footer from './components/Footer';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Login from './components/Auth/Login';
+import Register from './components/Auth/Register';
+import Dashboard from './components/Dashboard';
+import ProtectedRoute from './components/ProtectedRoute';
+import Header from './components/Layout/Header';
+import Footer from './components/Layout/Footer';
+import LandingPage from './components/LandingPage';
 
 function App() {
   return (
-    <div className="bg-gradient-to-b from-green-50 to-green-100 min-h-screen">
-      <Header />
-      <Hero />
-      <Features />
-      <Testimonials />
-      <Pricing />
-      <FAQ />
-      <Footer />
-    </div>
+    <Router>
+      <div className="flex flex-col min-h-screen">
+        <Header />
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/prijava" element={<Login />} />
+            <Route path="/registracija" element={<Register />} />
+            <Route 
+              path="/nadzorna-plosca" 
+              element={
+                <ProtectedRoute>
+                  <Dashboard />
+                </ProtectedRoute>
+              } 
+            />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

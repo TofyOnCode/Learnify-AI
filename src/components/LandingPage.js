@@ -5,7 +5,7 @@ import Pricing from './Pricing';
 import Testimonials from './Testimonials';
 import FAQ from './FAQ';
 
-function Home() {
+function LandingPage() {
   return (
     <div>
       <Hero />
@@ -17,4 +17,5 @@ function Home() {
   );
 }
 
-export default Home;
+export default LandingPage;
+

@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../assets/logo.png'; 
+import Logo from '../../assets/logo.png'; 
 
 function Footer() {
   return (
@@ -48,7 +48,7 @@ function Footer() {
           </div>
         </div>
         <div className="border-t border-gray-800 mt-12 pt-8 text-sm text-gray-400 text-center">
-          <p>© 2023 Learnify AI. Vse pravice pridržane.</p>
+          <p>© 2024 Learnify AI. Vse pravice pridržane.</p>
           <p className="mt-2">Ustvarjeno z ♥ za boljše učenje matematike.</p>
         </div>
       </div>
