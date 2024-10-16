@@ -34,6 +34,7 @@ function Header() {
           {user ? (
             <>
               <Link to="/nadzorna-plosca" className="text-white hover:text-green-400 transition duration-300 mr-6">Nadzorna plošča</Link>
+              <Link to="/profil" className="text-white hover:text-green-400 transition duration-300 mr-6">Profil</Link>
               <button 
                 onClick={handleLogout} 
                 className="bg-red-600 text-white px-6 py-2 rounded-full hover:bg-red-700 transition duration-300 font-semibold"

@@ -1,6 +1,8 @@
 import React from 'react';
 
-const ProgressBar = ({ progress }) => {
+const ProgressBar = ({ remainingQuestions, totalQuestions }) => {
+  const progress = ((totalQuestions - remainingQuestions) / totalQuestions) * 100;
+
   return (
     <div className="w-full bg-gray-700 rounded-full h-2.5 dark:bg-gray-700">
       <div 
@@ -12,4 +14,3 @@ const ProgressBar = ({ progress }) => {
 };
 
 export default ProgressBar;
-
