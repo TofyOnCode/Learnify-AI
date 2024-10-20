@@ -30,15 +30,12 @@ const openaiService = {
   generateResponseWithImage: async (prompt, chatHistory, imageUrl) => {
     try {
       const response = await axios.post(OPENAI_API_URL, {
-        model: "gpt-4-vision-preview", // Uporabite ta model za analizo slik
+        model: "gpt-4",
         messages: [
           ...chatHistory,
           { 
             role: "user", 
-            content: [
-              { type: "text", text: prompt },
-              { type: "image_url", image_url: { "url": imageUrl } }
-            ]
+            content: `${prompt}\n\nSlika: ${imageUrl}\n\nProsim, analiziraj to sliko in odgovori na vprašanje.` 
           }
         ],
         max_tokens: 300
